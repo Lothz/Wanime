@@ -1,30 +1,51 @@
-public class Anime {
+package br.com.alura.wanime.modelos;
 
-    String nome;
-    String descricao;
-    int anoDeLancamento;
-    boolean incluidoNoPlano;
-    private double somaDeNotas;
-    private int totalDeNotas;
-    int tempoEmMinutos;
-    int totalEpisodios;
+import java.util.ArrayList;
+import java.util.List;
 
-    int getTotalDeNotas (){
-        return totalDeNotas;
+public class Anime extends Titulo {
+
+    private boolean ativa;
+    private int totalEpisodios;
+    private int minutosPorEpisodio;
+
+
+    @Override
+    public int getTempoEmMinutos() {
+        return totalEpisodios * minutosPorEpisodio;
     }
 
-    void exibeFichaTecnica() {
-        System.out.printf("Nome do anime: " + nome + " | Lançado no ano de: " + anoDeLancamento);
-        System.out.printf("\nDescrição do anime: " + descricao);
-        System.out.printf("\nQuantidade de episódios: " + totalEpisodios + "\n");
-
+    public int getTotalEpisodios() {
+        return totalEpisodios;
     }
 
-    void avalie(double nota) {
-        somaDeNotas += nota; totalDeNotas++;
+    public void setTotalEpisodios(int totalEpisodios) {
+        this.totalEpisodios = totalEpisodios;
     }
 
-    double retornaMedia(){
-        return somaDeNotas / totalDeNotas;
+    public void setTemporadas(List<Temporada> temporadas) {
+        this.temporadas = temporadas;
     }
-}
+
+    private List<Temporada> temporadas;
+
+    public Anime() {
+        this.temporadas = new ArrayList<>();
+    }
+
+    public void adicionarTemporada(Temporada temporada){
+        temporadas.add(temporada);
+    }
+
+    public List<Temporada> getTemporadas(){
+        return temporadas;
+    }
+
+    public int getMinutosPorEpisodio() {
+        return minutosPorEpisodio;
+    }
+
+    public void setMinutosPorEpisodio(int minutosPorEpisodio) {
+        this.minutosPorEpisodio = minutosPorEpisodio;
+    }
+    }

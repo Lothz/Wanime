@@ -12,6 +12,7 @@ public class Main {
         meuAnime.setDescricao("FLCL é uma série de anime em OVA, criado pelo diretor Kazuya Tsurumaki e produzido pela Gainax e Production I.G.");
         meuAnime.setTotalEpisodios(6);
         meuAnime.setMinutosPorEpisodio(20);
+        meuAnime.setSeasons(4);
 
         meuAnime.exibeFichaTecnica();
 

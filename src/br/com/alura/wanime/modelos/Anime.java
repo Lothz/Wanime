@@ -8,11 +8,20 @@ public class Anime extends Titulo {
     private boolean ativa;
     private int totalEpisodios;
     private int minutosPorEpisodio;
+    private int seasons;
 
 
     @Override
     public int getTempoEmMinutos() {
-        return totalEpisodios * minutosPorEpisodio;
+        return totalEpisodios * minutosPorEpisodio * seasons;
+    }
+
+    public int getSeasons() {
+        return seasons;
+    }
+
+    public void setSeasons(int seasons) {
+        this.seasons = seasons;
     }
 
     public int getTotalEpisodios() {
